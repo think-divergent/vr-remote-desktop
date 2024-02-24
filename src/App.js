@@ -29,7 +29,7 @@ const MAX_HEIGHT = 3600
 const DISPLAY_WIDTH = 6106
 const DISPLAY_HEIGHT = 3384
 const SUBDIVS= 3//32
-const PPD = 18
+const PPD = 25
 const font = loader.load(
 	// resource URL
 	'fonts/Arial_Regular.json',
@@ -257,7 +257,7 @@ function App2 (){
   <XRButton mode="VR" 
     sessionInit={{ optionalFeatures: ["layers"] }}
     style={{padding: 32}}/>
-    {initialized&&   <Canvas>
+    {initialized&&   <Canvas camera={{fov:120}}>
     <XR>
       <Controllers />
       <Hands />
@@ -313,9 +313,9 @@ function App() {
           var arr = sdp.sdp.split('\r\n');
           arr.forEach((str, i) => {
             if (/^a=fmtp:\d*/.test(str)) {
-              arr[i] = str + ';x-google-max-bitrate=10000;x-google-min-bitrate=0;x-google-start-bitrate=6000';
+              arr[i] = str + ';x-google-max-bitrate=1000000;x-google-min-bitrate=0;x-google-start-bitrate=1000000';
             } else if (/^a=mid:(1|video)/.test(str)) {
-              arr[i] += '\r\nb=AS:10000';
+              arr[i] += '\r\nb=AS:1000000';
             }
           });
           sdp = new RTCSessionDescription({

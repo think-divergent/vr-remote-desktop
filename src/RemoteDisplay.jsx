@@ -77,7 +77,7 @@ function createLayer(renderer,video) {
   if (!space) throw Error("no ref space");
   const xrMediaFactory = new window.XRMediaBinding(session);
   const transform = new XRRigidTransform(
-    {x:0, y:1.5, z:0},
+    {x:0, y:0.5, z:0},
     {x:0.3, y:0, z:0}
   )
   const layer = xrMediaFactory.createEquirectLayer(video, { space, transform });
