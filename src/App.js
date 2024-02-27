@@ -29,7 +29,7 @@ const MAX_HEIGHT = 3600
 const DISPLAY_WIDTH = 6106
 const DISPLAY_HEIGHT = 3384
 const SUBDIVS= 3//32
-const PPD = 25
+const PPD = 20
 const font = loader.load(
 	// resource URL
 	'fonts/Arial_Regular.json',
